@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>The Site of Knosmos</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+    <body>
+        <style>
+            html,body{
+                margin: 0;
+                padding: 0;
+            }
+            #container{
+                margin-left: 10%;
+                margin-right: 10%;
+                font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            }
+            #card-container{
+                display:grid;
+                grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+                grid-gap: 20px 20px;
+                gap: 20px 20px;
+            }
+            #title{
+                font-size:13vw;
+                font-weight:lighter;
+                text-decoration: none;
+            }
+            @keyframes spinImage{
+                from {transform:rotate(0deg);}
+                to {transform:rotate(360deg);}
+            }
+            #titleImg{
+                width:17%;
+                float:left;
+                margin-right:20px;
+                animation-timing-function:linear;
+                animation: spinImage 5s infinite;
+            }
+            .card{
+                padding:20px;
+                border-radius:10px;
+                box-shadow: 0px 0px 10px rgb(235, 235, 235);
+                position:relative;
+            }
+            @keyframes cardRise{
+                from{
+                    top:0;
+                    box-shadow: 0px 0px 10px rgb(235,235,235);
+                }
+                to{
+                    top:-10px;
+                    box-shadow: 0px 0px 20px rgb(200,200,200);
+                }
+            }
+            @keyframes cardFall{
+                from{
+                    top:-10px;
+                    box-shadow: 0px 0px 20px rgb(200,200,200);
+                }                
+                to{
+                    top:0;
+                    box-shadow: 0px 0px 10px rgb(235,235,235);
+                }
+            }
+            .card:hover{
+                top:-10px;
+                box-shadow: 0px 0px 20px rgb(200,200,200);
+                animation: cardRise 1s;
+            }
+            .card:hover::after{
+                top:0px;
+                box-shadow: 0px 0px 10px rgb(235,235,235);
+                animation: cardFall 1s;
+            }
+            a{
+                color:black;
+                font-weight:lighter;
+                text-decoration:none;
+            }
+        </style>
+        <div id=container>
+            <img src='dot.png' id=titleImg />
+            <a href='https://github.com/knosmos'><h1 id=title>knosmouse</h1></a>
+            <div id=card-container>
+                <div class=card>
+                    <a href='fisheries'><h2>The Fisheries of Bob</h2></a>
+                    <p>Fish the high seas while fighting pirate ships and krakens</p>
+                </div>
+                <div class=card>
+                    <a href='frigenotes'><h2>Refrigerator Notes</h2></a>
+                    <p>A simple and convenient to-do list program</p>
+                </div>
+                <div class=card>
+                    <a href='timesinvasion'><h2>TimesInvasion</h2></a>
+                    <p>A small, fun multiplication shoot em' up game</p>
+                </div>
+                <div class=card>
+                    <a href='contagion'><h2>Contagion</h2></a>
+                    <p>Wipe out the virus before it infects all the cells!</p>
+                </div>
+                <div class=card>
+                    <a href='https://github.com/knosmos/conductor'><h2>Conductor</h2></a>
+                    <p>Control a computer with a conductor's baton</p>
+                </div>
+            </div>
+            <br>
+            <br>
+        </div>
+    </body>
+</html>
